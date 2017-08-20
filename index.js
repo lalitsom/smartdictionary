@@ -1,12 +1,19 @@
 searchBar = document.getElementById('searchbar');
 resultList = document.getElementById('result_list');
+suggestionsList = document.getElementById('suggestions_list');
 
+const {clipboard} = require('electron');
+setInterval(checkClipboard,2000);
 var jsonfile = require('jsonfile')
 var file = 'dictionary.json'
 var dict;
 jsonfile.readFile(file, function(err, obj) {
-  dict = obj;
-})
+  if(err){
+    console.log(err);
+  }else{
+      dict = obj;
+  }
+});
 
 
 function check(){
@@ -50,6 +57,22 @@ function addResult(item){
   '<li>  <div class="result alert alert-warning"> '+item+'</div>  </li>';
 }
 
+function checkClipboard(){
+  sentence = (clipboard.readText()).split(" ");
+  //console.log(sentence);
+  suggestionsList.innerHTML="";
+  for(var i in sentence){
+    //console.log(word)
+    if(i>10 || sentence[i].length > 24){
+      continue;
+    }
+    suggestionsList.innerHTML+=  "<span onclick=search(this);>" + sentence[i] + "</span> ";
+  }
+}
 
-
+function search(text){
+  searchBar.value = text.innerHTML;
+  check();
+  searchBar.focus();
+}
 check();

@@ -8,19 +8,33 @@
     <script src="index.js" charset="utf-8" defer></script>
   </head>
   <body>
-    <div class="container">
+    <div class="container" style="overflow-wrap : break-word;">
 
-<form class="search-form">
-  <input type="text" name="search bar" id="searchbar"
-   placeholder="Enter keyword" class="form-control" autofocus onkeyup="check()">
-  </form>
-<hr>
-<ul id="result_list" class="text text-primary">
-  
-</ul>
+      <div class="container" style=" background-color:#F6F8F8;  width:100%">
+        <div class="text alert alert-danger">
+          Suggestions : &nbsp; <span id="suggestions_list"></span>
+            </div>
 
+          <form class="search-form">
+            <input type="text" name="search bar" id="searchbar"
+             placeholder="Enter keyword" class="form-control" autofocus onkeyup="check()">
+            </form>
+
+          <hr>
+      </div>
+      <div class="">
+        <ul id="result_list" class="text text-primary" >
+
+        </ul>
+
+      </div>
+
+      <div class=" margin-small text-grey" id="info">
+        Hide/Show Dictionary  :<br> Ctrl + Shift + D
+        <br><br>
+        Quit Dictionary :<br> Ctrl + Shift + Q
+      </div>
 
     </div>
-
   </body>
 </html>
