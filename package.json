@@ -1,0 +1,17 @@
+{
+  "name": "lockscreen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.7.5"
+  },
+  "dependencies": {
+    "jsonfile": "^3.0.1"
+  }
+}
