@@ -15,7 +15,7 @@ An easy to use Dictionary, made using Electron.
 
 ```
 $ git clone https://github.com/muan/mojibar.git
-$ cd mojibar
+$ cd smartdictionary
 $ npm install
 $ npm start
 ```
