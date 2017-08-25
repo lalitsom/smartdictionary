@@ -9,12 +9,10 @@
   </head>
   <body>
     <div class="container" style="overflow-wrap : break-word;">
-
       <div class="container" style=" background-color:#F6F8F8;  width:100%">
         <div class="text alert alert-danger">
           Suggestions : &nbsp; <span id="suggestions_list"></span>
             </div>
-
           <form class="search-form">
             <input type="text" name="search bar" id="searchbar"
              placeholder="Enter keyword" class="form-control" autofocus onkeyup="check()">
@@ -22,11 +20,11 @@
 
           <hr>
       </div>
+
+
       <div class="">
         <ul id="result_list" class="text text-primary" >
-
         </ul>
-
       </div>
 
       <div class=" margin-small text-grey" id="info">
@@ -36,5 +34,9 @@
       </div>
 
     </div>
+
+    <label class=" bottom-fix checkbox-inline text text-danger" style=" background-color:#F6F8F8" >
+        <input type="checkbox" onclick="toggleLogin(this)"> Run at Login
+    </label>
   </body>
 </html>

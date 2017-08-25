@@ -11,3 +11,10 @@ body{
 .margin-small{
   margin : 15%;
 }
+
+.bottom-fix{
+  margin:2px;
+   font-size:15px;
+   bottom:5px;
+   position:fixed;
+}

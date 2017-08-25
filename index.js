@@ -1,6 +1,13 @@
+const remote = require('electron').remote;
+const mainProcess = remote.require('./main');
+const currentWindow = remote.getCurrentWindow();
+
+AutoLauncher = mainProcess.Launcher();
+
 searchBar = document.getElementById('searchbar');
 resultList = document.getElementById('result_list');
 suggestionsList = document.getElementById('suggestions_list');
+
 
 const {clipboard} = require('electron');
 setInterval(checkClipboard,2000);
@@ -75,4 +82,15 @@ function search(text){
   check();
   searchBar.focus();
 }
+
+function toggleLogin(chkbox){
+  if(chkbox.checked){
+    AutoLauncher.enable();
+  }else{
+    AutoLauncher.disable();
+  }
+}
+
+
+
 check();

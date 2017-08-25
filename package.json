@@ -1,5 +1,5 @@
 {
-  "name": "lockscreen",
+  "name": "smartdictionary",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -12,6 +12,8 @@
     "electron": "^1.7.5"
   },
   "dependencies": {
+    "auto-launch": "^5.0.1",
+    "electron-packager": "^8.7.2",
     "jsonfile": "^3.0.1"
   }
 }

@@ -6,6 +6,19 @@ const BrowserWindow = electron.BrowserWindow;
 var mainWindow;
 
 
+//////////auto launch/////////////////////////
+var AutoLaunch = require('auto-launch');
+
+var AutoLauncher = new AutoLaunch({
+  name: 'smartdictionary',
+});
+
+exports.Launcher = function(){
+                    return AutoLauncher;
+                  }
+//////////////////////////////////////////////////
+
+
 app.on('ready',function(){
   const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize;
   mainWindow = new BrowserWindow({ width: width/4,  height: height, x: (3*width)/4, y: 0, movable: false,
@@ -32,6 +45,7 @@ globalShortcut.register('CommandOrControl+Shift+Q', () => {
     protocol: 'file:',
     slashes: true
   }));
+
 });
 
 
@@ -44,5 +58,7 @@ function toggleWindow(){
 }
 
 function closeWindow(){
+  mainWindow.removeAllListeners('close');
   mainWindow.close();
+  app.quit();
 }
